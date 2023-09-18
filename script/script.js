@@ -13,4 +13,4 @@ equacao2Grau = (a,b,c) =>{
 }
 
 // Tentando... 3x2 - 2x -1
-escrever(equacao2Grau(-2,1,2));
+// escrever(equacao2Grau(-2,1,2));
