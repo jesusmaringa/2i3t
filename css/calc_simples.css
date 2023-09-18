@@ -19,6 +19,7 @@ body {
 .btn {
     text-align: center;
     padding: 5px;
+    font-size: 22px;
 }
 button {
    width: 40px;

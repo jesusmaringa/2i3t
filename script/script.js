@@ -1,4 +1,8 @@
-escrever = msg => alert(msg);
+let a = "";
+let b = "";
+let valor = 0;
+let executar = "";
+
 soma = (a,b) => a + b;
 sub = (a,b) => a - b;
 mult = (a,b) => a * b;
@@ -11,6 +15,27 @@ equacao2Grau = (a,b,c) =>{
     return "x1 = " + div(soma(-b,raiz(delta)),mult(2,a)) + 
            " x2 = " + div(sub(-b,raiz(delta)),mult(2,a));
 }
+function mostrar_resultado(){
+    document.getElementById("resultado").value = valor;
+}
+function calcular(){
+    if(executar != ""){
+        if(executar = "soma") mostrar_resultado(soma(a,b));
+        if(executar = "sub") mostrar_resultado(sub(a,b));
+        if(executar = "div") mostrar_resultado(div(a,b));
+        if(executar = "mult") mostrar_resultado(mult(a,b));
+        executar = "";
+        a = ""
+        b = "";
+    }
+}
+function digitando(tecla){
+   if(executar == ""){
+       a += tecla;
+       alert(a);
+   }else{
+       b += tecla;
+   } 
+   
 
-// Tentando... 3x2 - 2x -1
-// escrever(equacao2Grau(-2,1,2));
+}
