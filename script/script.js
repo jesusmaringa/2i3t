@@ -3,10 +3,11 @@ let b = "";
 let valor = "";
 let executar = "";
 let temPonto = false;
-soma = (a,b) => a + b;
-sub = (a,b) => a - b;
-mult = (a,b) => a * b;
-div = (a,b) => a / b;
+let desligada = true;
+soma = (a,b) => Number(a) + Number(b);
+sub = (a,b) => Number(a) - Number(b);
+mult = (a,b) => Number(a) * Number(b);
+div = (a,b) => Number(a) / Number(b);
 raiz = a => Math.sqrt(a);
 equacao2Grau = (a,b,c) =>{
     let delta = sub(mult(b,b),mult(4,mult(a,c)));
@@ -25,6 +26,8 @@ function calcular(){
         if(executar == "sub") valor = sub(a,b);
         if(executar == "div") valor = div(a,b);
         if(executar == "mult") valor = mult(a,b);
+        if(executar == 'porc') valor = 0;
+        if(executar == "raiz") valor = raiz(a);
         mostrar_resultado();
         executar = "";
         a = "";
@@ -32,6 +35,23 @@ function calcular(){
         valor = "";
         temPonto = false;
     }
+}
+function desliga(){
+    if(desligada){
+        zerar();
+    }else{
+        zerar();
+        mostrar_resultado();
+    }
+    desligada = !desligada;
+}
+function zerar(){
+    a = "";
+    b = "";
+    valor = "0";
+    executar = "";
+    mostrar_resultado();
+    valor = "";
 }
 function operacao(op){
     executar = op;
