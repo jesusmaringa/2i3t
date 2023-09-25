@@ -21,10 +21,10 @@ function mostrar_resultado(){
 function calcular(){
     if(executar != ""){
         b = valor;
-        if(executar = "soma") valor = soma(a,b);
-        if(executar = "sub") valor = sub(a,b);
-        if(executar = "div") valor = div(a,b);
-        if(executar = "mult") valor = mult(a,b);
+        if(executar == "soma") valor = soma(a,b);
+        if(executar == "sub") valor = sub(a,b);
+        if(executar == "div") valor = div(a,b);
+        if(executar == "mult") valor = mult(a,b);
         mostrar_resultado();
         executar = "";
         a = "";
