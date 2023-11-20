@@ -162,12 +162,18 @@ const setpa_r = () =>{
     mostrarpa_seq();
 }
 const mostrarpa_seq = () => {
-    let pa = "";
-    if(pa_a1 != "") pa += pa_a1;
-    if(pa_r != "" && pa_n != ""){
+    let pa = pa_a1;
+    let ntermos = 1;
+    if(pa_r != "" && pa_n != "" && pa_a1 != "" && pa_n > 0){
         for(let i = 1; i < pa_n; i++){
-             pa += ", " + (i * pa_r ) + Number(pa_a1);
+            if(ntermos < 4){
+              pa += ", " + (Number(pa_a1) + (i*pa_r));
+              ntermos++;
+            }
         }
+    }
+    if( pa_n > 3){
+        pa += ", ... , " + (Number(pa_a1) + (pa_n - 1) * pa_r);
     }
     document.getElementById("pa_seq").innerHTML = pa;
 }
